@@ -1,5 +1,12 @@
 <?php
 
+$url = parse_url(getenv("postgres://fskqmztjxpvxbx:UdAsonO2U4rLXBBuAUM9-R345u@ec2-54-204-38-16.compute-1.amazonaws.com:5432/d87br02entevj1"));
+
+$host = $url["ec2-54-204-38-16.compute-1.amazonaws.com"];
+$username = $url["fskqmztjxpvxbx"];
+$password = $url["UdAsonO2U4rLXBBuAUM9-R345u"];
+$database = substr($url["d87br02entevj1"], 1);
+
 return array(
 
 	/*
@@ -26,7 +33,8 @@ return array(
 	|
 	*/
 
-	'default' => 'mysql',
+	#'default' => 'mysql',
+	'default' => 'pgsql',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -65,10 +73,10 @@ return array(
 
 		'pgsql' => array(
 			'driver'   => 'pgsql',
-			'host'     => 'localhost',
-			'database' => 'forge',
-			'username' => 'forge',
-			'password' => '',
+			'host'     =>  $host,
+			'database' =>  $database,
+			'username' =>  $username,
+			'password' =>  $password,
 			'charset'  => 'utf8',
 			'prefix'   => '',
 			'schema'   => 'public',
