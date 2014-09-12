@@ -1,11 +1,11 @@
 <?php
 
-$url = parse_url(getenv("postgres://fskqmztjxpvxbx:UdAsonO2U4rLXBBuAUM9-R345u@ec2-54-204-38-16.compute-1.amazonaws.com:5432/d87br02entevj1"));
+$url = parse_url(getenv("DATABASE_URL"));
 
-$host = $url["ec2-54-204-38-16.compute-1.amazonaws.com"];
-$username = $url["fskqmztjxpvxbx"];
-$password = $url["UdAsonO2U4rLXBBuAUM9-R345u"];
-$database = substr($url["d87br02entevj1"], 1);
+$host = $url["host"];
+$username = $url["user"];
+$password = $url["pass"];
+$database = substr($url["path"], 1);
 
 return array(
 
