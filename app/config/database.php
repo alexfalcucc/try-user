@@ -1,5 +1,6 @@
 <?php
 
+$url = parse_url(getenv("postgres://fskqmztjxpvxbx:UdAsonO2U4rLXBBuAUM9-R345u@ec2-54-204-38-16.compute-1.amazonaws.com:5432/d87br02entevj1"));
 
 return array(
 
@@ -13,12 +14,6 @@ return array(
 	| array format for simplicity. Here you can tweak the fetch style.
 	|
 	*/
-	$url = parse_url(getenv("DATABASE_URL"));
-
-	$host = $url["host"];
-	$username = $url["user"];
-	$password = $url["pass"];
-	$database = substr($url["path"], 1);
 
 	'fetch' => PDO::FETCH_CLASS,
 
@@ -73,10 +68,10 @@ return array(
 
 		'pgsql' => array(
 			'driver'   => 'pgsql',
-			'host'     =>  $host,
-			'database' =>  $database,
-			'username' =>  $username,
-			'password' =>  $password,
+			'host'     => 'ec2-54-204-38-16.compute-1.amazonaws.com',
+			'database' => 'd87br02entevj1',
+			'username' => 'fskqmztjxpvxbx',
+			'password' => 'UdAsonO2U4rLXBBuAUM9-R345u',
 			'charset'  => 'utf8',
 			'prefix'   => '',
 			'schema'   => 'public',
