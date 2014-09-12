@@ -5,7 +5,8 @@
 	"license": "MIT",
 	"require": {
 		"laravel/framework": "4.2.*",
-		"dollar/generators": "dev-master"
+		"dollar/generators": "dev-master",
+		"php": "~5.6.0"
 	},
 	"minimum-stability" : "dev",
 	"autoload": {
