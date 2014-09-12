@@ -1,0 +1,1 @@
+/var/www/try-laravel/resources/views/pessoas/show.blade.php

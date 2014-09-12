@@ -20,3 +20,5 @@ Route::get('users', function()
 {
 	return View::make('users');
 });
+
+Route::resource('pessoas', 'PessoasController');
